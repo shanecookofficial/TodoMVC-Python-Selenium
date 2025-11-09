@@ -1,5 +1,4 @@
 from src.pages.todo_page import TodoPage
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,7 +7,7 @@ import src.utils as utils
 import random
 
 
-def test_create_todo_no_todo_present():
+def test_create_todo_no_todo_present(driver):
     """
     1. Navigate to https://todomvc.com/examples/react/dist/ .
     - The What needs to be done? input is visible.
@@ -18,7 +17,6 @@ def test_create_todo_no_todo_present():
     - The Todo item populates under the What needs to be done? input.
     - The todo-count span becomes visible, containing the phrase "1 item left!".
     """
-    driver = webdriver.Chrome()
 
     # 1. Navigate to https://todomvc.com/examples/react/dist/ .
     todo_page = TodoPage(driver)
