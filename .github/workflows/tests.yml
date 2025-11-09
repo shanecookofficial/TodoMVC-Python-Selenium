@@ -1,7 +1,6 @@
 name: Run Selenium Pytest
 
 on:
-  push:
   pull_request:
   workflow_dispatch:
 

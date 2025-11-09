@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 @pytest.fixture
 def driver():
     """Provides a headless Chrome WebDriver instance."""
@@ -15,8 +16,7 @@ def driver():
     options.add_argument("--window-size=1920,1080")
 
     driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
-        options=options
+        service=Service(ChromeDriverManager().install()), options=options
     )
 
     yield driver
